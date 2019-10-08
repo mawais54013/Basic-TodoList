@@ -12,6 +12,7 @@ class CreateTodoViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var importantSwitch: UISwitch!
+    var todoTableVC : TodoTableViewController? = nil
     
 
     override func viewDidLoad() {
@@ -25,6 +26,9 @@ class CreateTodoViewController: UIViewController {
         if let name = nameTextField.text {
             newTodo.name = name
             newTodo.important = importantSwitch.isOn
+            todoTableVC?.todos.append(newTodo)
+            todoTableVC?.tableView.reloadData()
+            navigationController?.popViewController(animated: true)
         }
     }
 
