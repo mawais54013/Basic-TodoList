@@ -15,6 +15,7 @@
 		B50331D9234C0D9A00C842AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50331D7234C0D9A00C842AA /* LaunchScreen.storyboard */; };
 		B50331E1234C0F1B00C842AA /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50331E0234C0F1B00C842AA /* Todo.swift */; };
 		B50331E3234C0F8800C842AA /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50331E2234C0F8800C842AA /* TodoTableViewController.swift */; };
+		B50331E5234C161F00C842AA /* CreateTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50331E4234C161F00C842AA /* CreateTodoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B50331DA234C0D9A00C842AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B50331E0234C0F1B00C842AA /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		B50331E2234C0F8800C842AA /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
+		B50331E4234C161F00C842AA /* CreateTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				B50331CB234C0D9800C842AA /* SceneDelegate.swift */,
 				B50331E0234C0F1B00C842AA /* Todo.swift */,
 				B50331E2234C0F8800C842AA /* TodoTableViewController.swift */,
+				B50331E4234C161F00C842AA /* CreateTodoViewController.swift */,
 				B50331CF234C0D9800C842AA /* Main.storyboard */,
 				B50331D5234C0D9A00C842AA /* Assets.xcassets */,
 				B50331D7234C0D9A00C842AA /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B50331E5234C161F00C842AA /* CreateTodoViewController.swift in Sources */,
 				B50331CA234C0D9800C842AA /* AppDelegate.swift in Sources */,
 				B50331E3234C0F8800C842AA /* TodoTableViewController.swift in Sources */,
 				B50331D4234C0D9800C842AA /* Basic_TodoList.xcdatamodeld in Sources */,

@@ -43,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="203" y="55"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Todo View Controller-->
         <scene sceneID="QHe-oJ-6Fo">
             <objects>
-                <viewController id="IWh-PW-zRJ" sceneMemberID="viewController">
+                <viewController id="IWh-PW-zRJ" customClass="CreateTodoViewController" customModule="Basic_TodoList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DBz-El-QJl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,13 +71,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XmQ-gH-EoP">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XmQ-gH-EoP">
                                 <rect key="frame" x="182.5" y="314" width="51" height="31"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1a-aY-xUc">
                                 <rect key="frame" x="180.5" y="385" width="53" height="48"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="IWh-PW-zRJ" eventType="touchUpInside" id="x7a-mE-oLH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -96,6 +99,10 @@
                         <viewLayoutGuide key="safeArea" id="PU5-dt-2Ot"/>
                     </view>
                     <navigationItem key="navigationItem" id="qek-Fh-B09"/>
+                    <connections>
+                        <outlet property="importantSwitch" destination="XmQ-gH-EoP" id="E7H-oZ-tOL"/>
+                        <outlet property="nameTextField" destination="lH1-cG-Prv" id="0Jb-Vn-YsE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ab-aa-r98" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
