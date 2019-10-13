@@ -12,7 +12,6 @@ class CreateTodoViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var importantSwitch: UISwitch!
-    var todoTableVC : TodoTableViewController? = nil
     
 
     override func viewDidLoad() {
@@ -21,15 +20,14 @@ class CreateTodoViewController: UIViewController {
     }
     
     @IBAction func addTapped(_ sender: Any) {
-        let newTodo = Todo()
-        
-        if let name = nameTextField.text {
-            newTodo.name = name
-            newTodo.important = importantSwitch.isOn
-            todoTableVC?.todos.append(newTodo)
-            todoTableVC?.tableView.reloadData()
-            navigationController?.popViewController(animated: true)
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            let newTodo = ToDoItem(context: context)
+            if let name = nameTextField.text {
+                newTodo.name = name
+                newTodo.important = importantSwitch.isOn
+                (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+                navigationController?.popViewController(animated: true)
+            }
         }
     }
-
 }

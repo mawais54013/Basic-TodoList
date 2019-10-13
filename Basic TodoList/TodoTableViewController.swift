@@ -10,20 +10,20 @@ import UIKit
 
 class TodoTableViewController: UITableViewController {
     
-    var todos : [Todo] = []
+    var todos : [ToDoItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let todo1 = Todo()
-        todo1.name = "Buy Milk"
-        todo1.important = true
-        
-        let todo2 = Todo()
-        todo2.name = "Walk the dog"
-        todo2.important = false
-        
-        todos = [todo1, todo2]
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            if let coreDataToDoItems = try? context.fetch(ToDoItem.fetchRequest()) as? [ToDoItem] {
+                todos = coreDataToDoItems
+                tableView.reloadData()
+            }
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,7 +36,9 @@ class TodoTableViewController: UITableViewController {
         let todo = todos[indexPath.row]
         
         if todo.important {
-            cell.textLabel?.text = "❗️" + todo.name
+            if let name = todo.name {
+                cell.textLabel?.text = "❗️" + name
+            }
         }
         else
         {
@@ -53,14 +55,9 @@ class TodoTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let createVC = segue.destination as? CreateTodoViewController {
-            createVC.todoTableVC = self
-        }
-        
         if let completeVC = segue.destination as? CompleteViewController {
-            if let todo = sender as? Todo {
+            if let todo = sender as? ToDoItem {
                 completeVC.todo = todo
-                completeVC.todoTableVC = self
             }
         }
     }
